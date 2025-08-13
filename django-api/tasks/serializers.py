@@ -50,28 +50,18 @@ class UserLoginSerializer(serializers.Serializer):
 class TaskSerializer(serializers.ModelSerializer):
     """Serializer for Task model."""
     user = UserSerializer(read_only=True)
-    user_id = serializers.IntegerField(write_only=True)
 
     class Meta:
         model = Task
         fields = [
-            'id', 'title', 'description', 'user', 'user_id', 'priority', 
+            'id', 'title', 'description', 'user', 'priority', 
             'status', 'due_date', 'completed_at', 'created_at', 'updated_at'
         ]
         read_only_fields = ['id', 'user', 'completed_at', 'created_at', 'updated_at']
 
-    def validate_user_id(self, value):
-        """Validate that the user exists."""
-        try:
-            User.objects.get(id=value)
-        except User.DoesNotExist:
-            raise serializers.ValidationError("User does not exist")
-        return value
-
     def create(self, validated_data):
-        user_id = validated_data.pop('user_id')
-        user = User.objects.get(id=user_id)
-        task = Task.objects.create(user=user, **validated_data)
+        # The user will be set by the view
+        task = Task.objects.create(**validated_data)
         return task
 
 class TaskListSerializer(serializers.ModelSerializer):
