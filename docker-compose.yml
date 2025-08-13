@@ -1,0 +1,111 @@
+version: '3.8'
+
+services:
+  # Django API - User authentication and task CRUD operations
+  django-api:
+    build: ./django-api
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+      - DJANGO_SETTINGS_MODULE=taskmanager.settings
+    volumes:
+      - ./django-api:/app
+      - django_data:/app/db
+    networks:
+      - task-network
+    depends_on:
+      - redis
+    command: >
+      sh -c "python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+
+  # Flask API - Task categories and filtering
+  flask-api:
+    build: ./flask-api
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+    volumes:
+      - ./flask-api:/app
+      - flask_data:/app/data
+    networks:
+      - task-network
+    depends_on:
+      - redis
+    command: python app.py
+
+  # FastAPI - Real-time analytics and statistics
+  fastapi-api:
+    build: ./fastapi-api
+    ports:
+      - "8001:8000"
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - ./fastapi-api:/app
+      - fastapi_data:/app/data
+    networks:
+      - task-network
+    depends_on:
+      - redis
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+  # React Frontend
+  react-frontend:
+    build: ./react-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_DJANGO_API_URL=http://localhost:8000/api
+      - REACT_APP_FLASK_API_URL=http://localhost:5000/api
+      - REACT_APP_FASTAPI_URL=http://localhost:8001/api
+    volumes:
+      - ./react-frontend:/app
+      - /app/node_modules
+    networks:
+      - task-network
+    depends_on:
+      - django-api
+      - flask-api
+      - fastapi-api
+    command: npm start
+
+  # Redis for caching and session storage
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - task-network
+    command: redis-server --appendonly yes
+
+  # Nginx reverse proxy (optional)
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - task-network
+    depends_on:
+      - django-api
+      - flask-api
+      - fastapi-api
+      - react-frontend
+
+volumes:
+  django_data:
+  flask_data:
+  fastapi_data:
+  redis_data:
+
+networks:
+  task-network:
+    driver: bridge 
