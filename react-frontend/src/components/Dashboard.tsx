@@ -1,3 +1,12 @@
+/**
+ * Dashboard Component for Task Management Application
+ * 
+ * Author: Eon (Himanshu Shekhar)
+ * Email: eonhimanshu@gmail.com
+ * 
+ * This component displays the main dashboard with quick actions and statistics.
+ */
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';

@@ -1,5 +1,8 @@
 # API Examples and Usage
 
+**Author:** Eon (Himanshu Shekhar)  
+**Email:** eonhimanshu@gmail.com
+
 This document provides comprehensive examples of API requests and responses for all three backend services.
 
 ## 🔐 Authentication

@@ -1,3 +1,12 @@
+"""
+Django Views for Task Management Application
+
+Author: Eon (Himanshu Shekhar)
+Email: eonhimanshu@gmail.com
+
+This module contains the API viewsets for users and tasks.
+"""
+
 from rest_framework import viewsets, status, permissions
 from rest_framework.decorators import action
 from rest_framework.response import Response

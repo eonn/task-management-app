@@ -1,5 +1,10 @@
 """
 Django settings for taskmanager project.
+
+Author: Eon (Himanshu Shekhar)
+Email: eonhimanshu@gmail.com
+
+This module contains Django configuration settings for the task management application.
 """
 
 from pathlib import Path

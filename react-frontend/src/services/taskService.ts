@@ -1,3 +1,12 @@
+/**
+ * Task Service for Task Management Application
+ * 
+ * Author: Eon (Himanshu Shekhar)
+ * Email: eonhimanshu@gmail.com
+ * 
+ * This service handles task CRUD operations and filtering.
+ */
+
 import axios from 'axios';
 
 const DJANGO_API_URL = 'http://localhost:8000/api';

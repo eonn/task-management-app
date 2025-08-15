@@ -1,3 +1,12 @@
+"""
+FastAPI Analytics API for Task Management Application
+
+Author: Eon (Himanshu Shekhar)
+Email: eonhimanshu@gmail.com
+
+This module provides real-time task statistics and analytics endpoints.
+"""
+
 from fastapi import FastAPI, HTTPException, Depends, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.middleware.cors import CORSMiddleware

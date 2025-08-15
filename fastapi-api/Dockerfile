@@ -1,3 +1,10 @@
+# FastAPI Dockerfile
+# 
+# Author: Eon (Himanshu Shekhar)
+# Email: eonhimanshu@gmail.com
+# 
+# Docker configuration for the FastAPI Analytics API
+
 FROM python:3.11-slim
 
 # Set environment variables

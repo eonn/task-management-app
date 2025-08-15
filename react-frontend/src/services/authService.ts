@@ -1,3 +1,12 @@
+/**
+ * Authentication Service for Task Management Application
+ * 
+ * Author: Eon (Himanshu Shekhar)
+ * Email: eonhimanshu@gmail.com
+ * 
+ * This service handles user authentication and token management.
+ */
+
 import axios from 'axios';
 
 const API_BASE_URL = 'http://localhost:8000/api';

@@ -1,7 +1,10 @@
 {
-  "name": "react-frontend",
+  "name": "task-management-frontend",
   "version": "0.1.0",
   "private": true,
+  "author": "Eon (Himanshu Shekhar) <eonhimanshu@gmail.com>",
+  "description": "React frontend for Task Management Application",
+  "homepage": "http://localhost:3000",
   "dependencies": {
     "@tanstack/react-query": "^5.85.0",
     "@testing-library/dom": "^10.4.1",

@@ -1,3 +1,10 @@
+# Django API Requirements
+# 
+# Author: Eon (Himanshu Shekhar)
+# Email: eonhimanshu@gmail.com
+# 
+# Python dependencies for the Django REST API
+
 Django==5.2.5
 djangorestframework==3.16.1
 djangorestframework-simplejwt==5.3.0

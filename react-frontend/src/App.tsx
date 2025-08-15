@@ -1,3 +1,12 @@
+/**
+ * Task Management Application - Main App Component
+ * 
+ * Author: Eon (Himanshu Shekhar)
+ * Email: eonhimanshu@gmail.com
+ * 
+ * This is the main React application component that handles routing and authentication.
+ */
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';

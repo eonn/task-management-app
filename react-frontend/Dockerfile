@@ -1,3 +1,10 @@
+# React Frontend Dockerfile
+# 
+# Author: Eon (Himanshu Shekhar)
+# Email: eonhimanshu@gmail.com
+# 
+# Docker configuration for the React TypeScript Frontend
+
 FROM node:18-alpine
 
 # Set working directory

@@ -1,3 +1,12 @@
+"""
+Django Models for Task Management Application
+
+Author: Eon (Himanshu Shekhar)
+Email: eonhimanshu@gmail.com
+
+This module contains the database models for users and tasks.
+"""
+
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils import timezone

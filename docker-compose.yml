@@ -1,3 +1,10 @@
+# Task Management Application - Docker Compose Configuration
+# 
+# Author: Eon (Himanshu Shekhar)
+# Email: eonhimanshu@gmail.com
+# 
+# This file orchestrates all services for the task management application.
+
 #version: '3.8'
 
 services:

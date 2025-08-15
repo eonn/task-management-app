@@ -1,3 +1,12 @@
+"""
+Flask RESTful API for Task Management Application
+
+Author: Eon (Himanshu Shekhar)
+Email: eonhimanshu@gmail.com
+
+This module provides task categories and filtering functionality.
+"""
+
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Api, Resource

@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """
 Test script for user registration functionality
+
+Author: Eon (Himanshu Shekhar)
+Email: eonhimanshu@gmail.com
+
+This script tests the user registration, login, and authentication functionality.
 """
 
 import requests

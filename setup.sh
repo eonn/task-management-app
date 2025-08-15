@@ -1,6 +1,11 @@
 #!/bin/bash
 
 # Task Management Application Setup Script
+# 
+# Author: Eon (Himanshu Shekhar)
+# Email: eonhimanshu@gmail.com
+# 
+# This script sets up the complete task management application environment.
 echo "🚀 Setting up Task Management Application..."
 
 # Check if Docker is installed

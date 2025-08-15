@@ -1,3 +1,10 @@
+# Flask API Dockerfile
+# 
+# Author: Eon (Himanshu Shekhar)
+# Email: eonhimanshu@gmail.com
+# 
+# Docker configuration for the Flask RESTful API
+
 FROM python:3.11-slim
 
 # Set environment variables

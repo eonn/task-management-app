@@ -1,5 +1,8 @@
 # 🚀 Enhanced User Registration Functionality
 
+**Author:** Eon (Himanshu Shekhar)  
+**Email:** eonhimanshu@gmail.com
+
 ## Overview
 
 The Task Management Application includes a comprehensive user registration system that spans across multiple frameworks (Django, Flask, FastAPI, and React). This document provides detailed information about the registration functionality, its features, and how to use it.
